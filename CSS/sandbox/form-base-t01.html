@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form Styling</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+        *
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body
+        {
+           font-family: Roboto, Arial;
+           background-color: cadetblue;
+        }
+
+        .ordinary-text
+        {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .form-wrapper
+        {
+            margin: 30px auto;
+            width: 320px; 
+          /*  background-color: antiquewhite; */
+            border-radius: 5px;          
+        }
+
+        .form-group input
+        {
+            display: block;
+            margin-bottom: 15px;
+            width: 100%;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .form-group-button
+        {
+            width: 100%;
+            padding: 5px;
+            border-radius: 1.4em;   
+            background-color: coral;
+            color: aliceblue;         
+        }
+
+        .form-group-button:hover
+        {
+            background-color: blueviolet;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 class="ordinary-text">Sign Up</h1>
+    
+    <p class="ordinary-text">It's free and only takes a minute</p>
+    <div class="form-wrapper">
+    <form>
+        <div class="form-group">
+            <label for="first-name" >First Name</label>
+            <input  type="text" name="firstName" id="first-name"/>
+        </div>
+        <div class="form-group">
+            <label for="last-name" >Last Name</label>
+            <input  type="text" name="lastName" id="last-name"/>
+        </div>
+        <div class="form-group">
+            <label for="email" >Email</label>
+            <input  type="email" name="email" id="email"/>
+        </div>
+        <div class="form-group">
+            <label for="password" >Password</label>
+            <input  type="password" name="password" id="password"/>
+        </div>
+        <div class="form-group">
+            <label for="conf-pass-word" >Confirm Password</label>
+            <input  type="password" name="conf-pass-word" id="conf-pass-word"/>
+        </div> 
+        
+        <button type="submit" class="form-group-button">Sign Up</button>                  
+    </form>
+</div>
+
+<p class="ordinary-text">By clicking the sign Up, you igree to our <br/>
+    Terms & Conditions and Privacy Policy</p>  
+
+    <footer>
+        <p class="ordinary-text">Already have an account? Login here</pclass="ordinary-text">
+    </footer>
+    
+</body>
+</html>
