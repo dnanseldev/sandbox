@@ -1,16 +1,20 @@
 const fetch = require('cross-fetch')
 
-const url = 'https://www.google.com/search?q=naught+dog&sxsrf=ALeKk02RxPVxDOUbDvbDn4hCzqhBmdZfVg:1623626675280&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiRs-bZ4JXxAhXpqZUCHXjBBtEQ_AUoA3oECAEQBQ&biw=1366&bih=641#imgrc=3IXjB63kTkbdIM&imgdii=RWcLdwRXfqU14M'
-
-
+const url = 'https://official-joke-api.appspot.com/random_joke'
 
 fetch(url)
    .then( res => {
-       if (!res.ok)
+       if (res.status >= 400)
          throw new Error(`Error status: ${res.status}`)
-        
-       const {status, statusText, counter, url} = res
-
-       console.log(res.url)
-   }) 
+       
+         console.log(res)
+       return res.json()
+    })
+    .then( ({id, type, setup, punchline}) => {
+      //const {id, type, setup, punchline} = img
+      console.log(`id: ${id}, type: ${type}, joke: ${setup}, punchline: ${punchline}`)
+    })
+    .catch(err => {
+      console.log(err)
+    })
    
