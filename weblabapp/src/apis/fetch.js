@@ -3,11 +3,11 @@ const fetch = require('cross-fetch')
 const url = 'https://official-joke-api.appspot.com/random_joke'
 
 fetch(url)
-   .then( res => {
+   .then( res =>   {
        if (res.status >= 400)
          throw new Error(`Error status: ${res.status}`)
        
-         console.log(res)
+       //  console.log(res)
        return res.json()
     })
     .then( ({id, type, setup, punchline}) => {
