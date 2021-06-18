@@ -29,27 +29,33 @@ function App() {
       })
       .then( usrs => {
 
-        const f1 = ['b', 'm', 'a']
-        const f2 = ['m', 'l']
-        const f3 = [...f1, ...f2]
+        
 
-        console.log(f3)
+        //console.log(f3)
         
         setUsers([...users, ...usrs])
         //setUsers([{id: usrs.id, name: usrs.name, username: usrs.username, email: usrs.email}])
 
-        console.log(usrs)
+        //console.log(usrs)
        
       })
       .catch(err => {
         console.log(err)
       })
   }
+
+  async function printAny() {
+    return 'Hi there'
+  }
+  const TestClick = obj => {
+     
+     console.log(printAny())
+  }
   
   return (
     <div className="App">
         <h1>Das ist ein test</h1>
-        <button type="submit" onClick={e => hdlClick(e)}>Get Users</button>
+        <button type="submit" onClick={e => TestClick(e)}>Get Users</button>
         {/* <User /> */}
 
          {
