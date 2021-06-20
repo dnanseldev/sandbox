@@ -1,4 +1,4 @@
-function greet()
+async function greet()
 {
     return 'Hi there'
 }
