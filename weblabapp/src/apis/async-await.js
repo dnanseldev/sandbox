@@ -34,9 +34,12 @@ add(5, 57).then(value => {
  //Pause the exection of a promise until it gets resolved
 
 const url = 'https://jsonplaceholder.typicode.com/users'
+const url2 = 'https://jsonplaceholder.typicode.com/users8'
 
+//-----------------------------------------------------
 const fetch = require('cross-fetch')
-
+const axios = require('axios')
+/*
 fetch(url)
     .then(response => {
         //console.log(response)
@@ -49,3 +52,24 @@ fetch(url)
             console.log(`name: ${usr.name}`)
         ))
     })
+*/
+//---------------------------------------
+
+const GetUsers = async () => {
+
+   try
+   {
+        const response = await axios.get(url2)     
+        response.data.map(u => (      
+        console.log(`${u.name}`)
+        ))
+   }catch(err)
+   {
+      console.log(`I have catched you, ${err}`)
+   }
+   
+}
+
+
+GetUsers()
+console.log('Any')
